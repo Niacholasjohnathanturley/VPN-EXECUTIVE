@@ -1,5 +1,5 @@
 
-# VPN-EXECUTIVE update OS
+# VPN-EXECUTIVE
 ```
 apt update && apt upgrade -y && update-grub && sleep 2 && reboot
 ```

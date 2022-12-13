@@ -1,13 +1,13 @@
 #!/bin/bash
 # //====================================================
 # //	System Request:Debian 9+/Ubuntu 18.04+/20+
-# //	Author:	bhoikfostyahya
+# //	Author:	rijal andra
 # //	Dscription: Xray Menu Management
-# //	email: admin@bhoikfostyahya.com
+# //	email: admin@rijal andra.com
 # //  telegram: https://t.me/bhoikfost_yahya
 # //====================================================
 
-# // FONT color configuration | BHOIKFOST YAHYA AUTOSCRIPT
+# // FONT color configuration | RIJAL ANDRA AUTOSCRIPT
 Green="\e[92;1m"
 RED="\033[31m"
 YELLOW="\033[33m"
@@ -20,7 +20,7 @@ ERROR="${RED}[ERROR]${FONT}"
 GRAY="\e[1;30m"
 NC='\e[0m'
 
-# // configuration GET | BHOIKFOST YAHYA AUTOSCRIPT
+# // configuration GET | RIJAL ANDRA AUTOSCRIPT
 TIMES="10"
 NAMES=$(whoami)
 IMP="wget -q -O"
@@ -61,10 +61,10 @@ function is_root() {
 
 judge() {
     if [[ 0 -eq $? ]]; then
-        print_ok "$1 Complete... | thx to ${YELLOW}bhoikfostyahya${FONT}"
+        print_ok "$1 Complete... | thx to ${YELLOW}rijal andra${FONT}"
         sleep 1
     else
-        print_error "$1 Fail... | thx to ${YELLOW}bhoikfostyahya${FONT}"
+        print_error "$1 Fail... | thx to ${YELLOW}rijal andra${FONT}"
         # // exit 1
     fi
     
@@ -221,7 +221,7 @@ function acme() {
 
 
 function configure_nginx() {
-    # // nginx config | BHOIKFOST YAHYA AUTOSCRIPT
+    # // nginx config | RIJAL ANDRA AUTOSCRIPT
     cd
     rm /var/www/html/*.html
     rm /etc/nginx/sites-enabled/default
@@ -310,14 +310,14 @@ function domain_add() {
     wgcfv6_status=$(curl -s6m8 https://www.cloudflare.com/cdn-cgi/trace -k | grep warp | cut -d= -f2)
     echo "${domain}" >/etc/xray/domain
     if [[ ${wgcfv4_status} =~ "on"|"plus" ]] || [[ ${wgcfv6_status} =~ "on"|"plus" ]]; then
-        # // Close wgcf-warp to prevent misjudgment of VPS IP situation | BHOIKFOST YAHYA AUTOSCRIPT
+        # // Close wgcf-warp to prevent misjudgment of VPS IP situation | RIJAL ANDRA AUTOSCRIPT
         wg-quick down wgcf >/dev/null 2>&1
         print_ok "wgcf-warp is turned off"
     fi
     local_ipv4=$(curl -s4m8 https://ip.gs)
     local_ipv6=$(curl -s6m8 https://ip.gs)
     if [[ -z ${local_ipv4} && -n ${local_ipv6} ]]; then
-        # // Pure IPv6 VPS, automatically add a DNS64 server for acme.sh to apply for a certificate | BHOIKFOST YAHYA AUTOSCRIPT
+        # // Pure IPv6 VPS, automatically add a DNS64 server for acme.sh to apply for a certificate | RIJAL ANDRA AUTOSCRIPT
         echo -e nameserver 2a01:4f8:c2c:123f::1 >/etc/resolv.conf
         print_ok "Recognize VPS as IPv6 Only, automatically add DNS64 server"
     fi
@@ -373,9 +373,9 @@ function dependency_install() {
 }
 
 function install_xray() {
-    # // Make Folder Xray & Import link for generating Xray | BHOIKFOST YAHYA AUTOSCRIPT
+    # // Make Folder Xray & Import link for generating Xray | RIJAL ANDRA AUTOSCRIPT
     judge "Core Xray 1.6.5 Version installed successfully"
-    # // Xray Core Version new | BHOIKFOST YAHYA AUTOSCRIPT
+    # // Xray Core Version new | RIJAL ANDRA AUTOSCRIPT
     curl -s ipinfo.io/city >> /etc/xray/city 
     curl -s ipinfo.io/org | cut -d " " -f 2-10 >> /etc/xray/isp 
     bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.6.5 >/dev/null 2>&1
@@ -452,7 +452,7 @@ function install_sc_cf() {
     restart_system
 }
 
-# // Prevent the default bin directory of some system xray from missing | BHOIKFOST YAHYA AUTOSCRIPT
+# // Prevent the default bin directory of some system xray from missing | RIJAL ANDRA AUTOSCRIPT
 clear
 LOGO
 echo -e "${RED}JANGAN INSTALL SCRIPT INI MENGGUNAKAN KONEKSI VPN!!!${FONT}"

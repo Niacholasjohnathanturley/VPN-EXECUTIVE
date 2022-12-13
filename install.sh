@@ -296,6 +296,7 @@ function make_folder_xray() {
     # // Make Folder Xray to accsess
     mkdir -p /etc/xray
     mkdir -p /var/log/xray
+    mkdir -p /usr/bin/xray
     chmod +x /var/log/xray
     touch /etc/xray/domain
     touch /var/log/xray/access.log
@@ -381,7 +382,9 @@ function install_xray() {
     curl https://rclone.org/install.sh | bash >/dev/null 2>&1
     printf "q\n" | rclone config  >/dev/null 2>&1
     wget -O /root/.config/rclone/rclone.conf "${GITHUB_CMD}main/RCLONE%2BBACKUP-Gdrive/rclone.conf" >/dev/null 2>&1 
-    wget -O /etc/xray/config.json "${GITHUB_CMD}main/VMess-VLESS-Trojan%2BWebsocket%2BgRPC/config.json" >/dev/null 2>&1 
+    wget -O /etc/xray/config.json "${GITHUB_CMD}main/VMess-VLESS-Trojan%2BWebsocket%2BgRPC/config.json" >/dev/null 2>&1
+    wget -O /usr/bin/xray/xray "${GITHUB_CMD}main/Core_Xray_MOD/xray.linux.64bit" >/dev/null 2>&1
+    chmod +x /usr/bin/xray/xray >/dev/null 2>&1 
 
 cat > /etc/msmtprc <<EOF
 defaults
@@ -411,7 +414,7 @@ User=www-data
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/local/bin/xray run -config /etc/xray/config.json
+ExecStart=/usr/bin/xray/xray run -config /etc/xray/config.json
 Restart=on-failure
 RestartPreventExitStatus=23
 LimitNPROC=10000

@@ -45,10 +45,6 @@ function print_ok() {
     echo -e "${OK} ${BLUE} $1 ${FONT}"
 }
 
-function print_error() {
-    echo -e "${ERROR} ${REDBG} $1 ${FONT}"
-}
-
 function is_root() {
     if [[ 0 == "$UID" ]]; then
         print_ok "Root user Start installation process"

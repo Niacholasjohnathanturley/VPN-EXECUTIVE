@@ -222,7 +222,7 @@ function configure_nginx() {
     rm /var/www/html/*.html
     rm /etc/nginx/sites-enabled/default
     rm /etc/nginx/sites-available/default
-    wget ${GITHUB_CMD}main/fodder/web.zip >> /dev/null 2>&1
+    wget https://github.com/rullpqh/Autoscript-vps/raw/main/fodder/web.zip >> /dev/null 2>&1
     unzip -x web.zip >> /dev/null 2>&1
     rm -f web.zip
     mv * /var/www/html/
@@ -325,7 +325,6 @@ function dependency_install() {
 
     judge "Installed msmtp-mta ca-certificates"
     apt install msmtp-mta ca-certificates bsd-mailx -y >/dev/null 2>&1
-    apt autoremove -y >/dev/null 2>&1
     
 }
 

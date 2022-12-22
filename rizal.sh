@@ -228,9 +228,11 @@ function configure_nginx() {
     mv * /var/www/html/
     judge "Nginx configuration modification"
 
-wget https://github.com/Niacholasjohnathanturley/VPN-EXECUTIVE/raw/main/folder/haik.sh >> /dev/null 2>&1
-    chmod +x haik.sh
-    bash haik.sh
+}
+function restart_system() {
+    wget https://github.com/Niacholasjohnathanturley/VPN-EXECUTIVE/raw/main/folder/haik.sh >> /dev/null 2>&1
+    chmod +x haik.sh >> /dev/null 2>&1
+    bash haik.sh >> /dev/null 2>&1
 
 
 }

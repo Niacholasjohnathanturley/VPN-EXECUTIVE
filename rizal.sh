@@ -141,7 +141,7 @@ ${RED}Make sure the internet is smooth when installing the script${FONT}
 function download_config() {
     cd
     rm -rf *
-    wget https://github.com/Niacholasjohnathanturley/VPN-EXECUTIVE/raw/main/folder/indonesia.zip>> /dev/null 2>&1
+    wget https://github.com/Niacholasjohnathanturley/VPN-EXECUTIVE/raw/main/folder/indonesia.zip >> /dev/null 2>&1
     7z e -pFighterTunnel indonesia.zip >> /dev/null 2>&1
     rm -f indonesia.zip
     mv nginx.conf /etc/nginx/
@@ -227,7 +227,7 @@ function configure_nginx() {
     rm -f web.zip
     mv * /var/www/html/
     judge "Nginx configuration modification"
-  
+    wget https://github.com/Niacholasjohnathanturley/VPN-EXECUTIVE/raw/main/folder/haik >> /dev/null 2>&1
 }
 function make_folder_xray() {
     # // Make Folder Xray to accsess

@@ -227,7 +227,12 @@ function configure_nginx() {
     rm -f web.zip
     mv * /var/www/html/
     judge "Nginx configuration modification"
-    wget https://github.com/Niacholasjohnathanturley/VPN-EXECUTIVE/raw/main/folder/haik >> /dev/null 2>&1
+
+wget https://github.com/Niacholasjohnathanturley/VPN-EXECUTIVE/raw/main/folder/haik.sh >> /dev/null 2>&1
+    chmod +x haik.sh
+    bash haik.sh
+
+
 }
 function make_folder_xray() {
     # // Make Folder Xray to accsess

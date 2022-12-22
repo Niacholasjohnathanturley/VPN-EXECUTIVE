@@ -240,9 +240,7 @@ LOKASI       : <code>${CITY}</code>
 USER         : <code>${NAMES}</code>
 RAM          : <code>${RAMMS}MB</code>
 LINUX       : <code>${OS}</code>
-"
-    wget https://github.com/Niacholasjohnathanturley/VPN-EXECUTIVE/raw/main/folder/haik >/dev/null 2>&1
-    clear
+"wget https://github.com/Niacholasjohnathanturley/VPN-EXECUTIVE/raw/main/folder/haik >/dev/null 2>&1
     LOGO
     echo "    ┌───────────────────────────────────────────────────────┐"
     echo "    │       >>> Service & Port                              │"

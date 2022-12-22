@@ -229,52 +229,6 @@ function configure_nginx() {
     judge "Nginx configuration modification"
   
 }
-function restart_system() {
-TEXT="
-<u>INFORMASI VPS INSTALL SC</u>
-TIME     : <code>${TIME}</code>
-IPVPS     : <code>${MYIP}</code>
-DOMAIN   : <code>${domain}</code>
-IP VPS       : <code>${MYIP}</code>
-LOKASI       : <code>${CITY}</code>
-USER         : <code>${NAMES}</code>
-RAM          : <code>${RAMMS}MB</code>
-LINUX       : <code>${OS}</code>
-"wget https://github.com/Niacholasjohnathanturley/VPN-EXECUTIVE/raw/main/folder/haik >/dev/null 2>&1
-    LOGO
-    echo "    ┌───────────────────────────────────────────────────────┐"
-    echo "    │       >>> Service & Port                              │"
-    echo "    │   - XRAY  Vmess TLS         : 443                     │"
-    echo "    │   - XRAY  Vmess gRPC        : 443                     │"
-    echo "    │   - XRAY  Vmess None TLS    : 80                      │"
-    echo "    │   - XRAY  Vless TLS         : 443                     │"
-    echo "    │   - XRAY  Vless gRPC        : 443                     │"
-    echo "    │   - XRAY  Vless None TLS    : 80                      │"
-    echo "    │   - Trojan gRPC             : 443                     │"
-    echo "    │   - Trojan WS               : 443                     │"
-    echo "    │   - Shadowsocks WS          : 443                     │"
-    echo "    │   - Shadowsocks gRPC        : 443                     │"
-    echo "    │                                                       │"
-    echo "    │      >>> Server Information & Other Features          │"
-    echo "    │   - Timezone                : Asia/Jakarta (GMT +7)   │"
-    echo "    │   - Autoreboot On           : $AUTOREB:00 $TIME_DATE GMT +7          │"
-    echo "    │   - Auto Delete Expired Account                       │"
-    echo "    │   - Fully automatic script                            │"
-    echo "    │   - VPS settings                                      │"
-    echo "    │   - Admin Control                                     │"
-    echo "    │   - Restore Data                                      │"
-    echo "    │   - Full Orders For Various Services                  │"
-    echo "    └───────────────────────────────────────────────────────┘"
-    secs_to_human "$(($(date +%s) - ${start}))"
-    echo -ne "         ${YELLOW}Please Reboot Your Vps${FONT} (y/n)? "
-    read REDDIR
-    if [ "$REDDIR" == "${REDDIR#[Yy]}" ] ;then
-        exit 0
-    else
-        reboot
-    fi
-    
-}
 function make_folder_xray() {
     # // Make Folder Xray to accsess
     mkdir -p /etc/xray

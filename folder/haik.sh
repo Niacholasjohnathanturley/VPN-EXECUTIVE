@@ -35,8 +35,7 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
 GITHUB_CMD="https://github.com/rullpqh/Autoscript-vps/raw/"
 OS=$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')
 
-}
-function restart_system() {
+
 TEXT="
 <u>INFORMASI VPS INSTALL SC</u>
 TIME     : <code>${TIME}</code>

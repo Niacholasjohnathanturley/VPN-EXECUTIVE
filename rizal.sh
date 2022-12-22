@@ -68,12 +68,12 @@ judge() {
 
 domain="cat /etc/xray/domain"
 cloudflare() {
-    DOMEN="EMAIL.my.id"
+    DOMEN="executivevpn.world"
     sub=$(tr </dev/urandom -dc a-z0-9 | head -c2)
-    domain="${sub}.EMAIL.my.id"
+    domain="${sub}.executivevpn.world"
     echo -e "${domain}" >/etc/xray/domain
-    CF_ID="EMAIL@gmail.com"
-    CF_KEY="dcb8ec1c12a9a412cf3ae45d887723f01b207"
+    CF_ID="bagusmuh96@gmail.com"
+    CF_KEY="98c33922df2e5fbdaf4583c16acc79ee55a11"
     set -euo pipefail
     IP=$(wget -qO- ipinfo.io/ip)
     print_ok "Updating DNS for ${GRAY}${domain}${FONT}"

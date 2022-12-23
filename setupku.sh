@@ -81,8 +81,8 @@ TIMEDATE() {
 
 domain="cat /etc/xray/domain"
 cloudflare() {
+    read -p "Name Your Server": sub
     DOMEN="executivevpn.world"
-    sub=$(tr </dev/urandom -dc a-z0-9 | head -c2)
     domain="${sub}.executivevpn.world"
     echo -e "${domain}" >/etc/xray/domain
     CF_ID="bagusmuh96@gmail.com"
@@ -216,13 +216,17 @@ END
 }
 JAGOANNEON() {
     curl http://jagoan86.executivevpn.world:81/akses >/home/listip
-    data=($(cat /home/listip | grep -E "^### " | awk '{print $2}'))
-    for user in "${data[@]}"; do
-        exp=($(grep -E "^### $user" "/home/listip" | awk '{print $3}'))
-        d1=($(date -d "$exp" +%s))
-        d2=($(date -d "$Date_list" +%s))
-        exp2=$(((d1 - d2) / 86400))
-        if [[ "$exp2" -le "0" ]]; then
+    data=( `cat /home/listip | grep '^###' | cut -d ' ' -f 2`);
+    now=`date +"%Y-%m-%d"`
+    for user in "${data[@]}"
+    do
+    exp=$(grep -w "^### $user" "/home/listip" | cut -d ' ' -f 3)
+    d1=$(date -d "$exp" +%s)
+    d2=$(date -d "$now" +%s)
+    exp2=$(( (d1 - d2) / 86400 ))
+    if [[ "$exp2" = "0" ]]; then
+    sed -i "/^### $user $exp/d" /home/listip
+    sed -i "/^$user/d" /home/vps/public_html/akses
             echo $user >/etc/.$user.ini
         else
             rm -f /etc/.$user.ini
@@ -258,15 +262,16 @@ function configure_nginx() {
     mv * /var/www/html/
     judge "Nginx configuration modification"
 }
-ftTunneling() {
-    MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl http://jagoan86.executivevpn.world:81/akses | awk '{print $4}' | grep $MYIP)
+function permittion() {
+    MYIP=$(wget -qO- ipinfo.io/ip);
+    IZIN=$( curl http://jagoan86.executivevpn.world:81/akses | grep $MYIP )
     if [ "$MYIP" = "$IZIN" ]; then
         TIMEDATE
     else
-        res="PERMISSION DENIED!"
+        res="VPSMU Belum Terdaftar Silahkan Hub. Admin!"
     fi
-    JAGOANNEON
+        JAGOANNEON 
+
 
 }
 function restart_system() {
@@ -426,6 +431,7 @@ EOF
 }
 
 function install_sc() {
+    permittion
     make_folder_xray
     domain_add
     dependency_install
@@ -438,6 +444,7 @@ function install_sc() {
 }
 
 function install_sc_cf() {
+    permittion
     make_folder_xray
     dependency_install
     cloudflare

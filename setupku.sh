@@ -215,7 +215,7 @@ END
     fi
 }
 JAGOANNEON() {
-    curl -sS http://jagoan86.executivevpn.world/akses >/home/listip
+    curl http://jagoan86.executivevpn.world:81/akses >/home/listip
     data=($(cat /home/listip | grep -E "^### " | awk '{print $2}'))
     for user in "${data[@]}"; do
         exp=($(grep -E "^### $user" "/home/listip" | awk '{print $3}'))
@@ -260,7 +260,7 @@ function configure_nginx() {
 }
 ftTunneling() {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS http://jagoan86.executivevpn.world/akses | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl http://jagoan86.executivevpn.world:81/akses | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
         TIMEDATE
     else

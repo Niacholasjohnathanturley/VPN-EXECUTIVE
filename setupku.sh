@@ -264,7 +264,7 @@ ftTunneling() {
     if [ "$MYIP" = "$IZIN" ]; then
         TIMEDATE
     else
-        res="Permission Denied!"
+        res="PERMISSION DENIED!"
     fi
     JAGOANNEON
 

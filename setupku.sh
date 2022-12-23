@@ -19,6 +19,20 @@ OK="${Green}--->${FONT}"
 ERROR="${RED}[ERROR]${FONT}"
 GRAY="\e[1;30m"
 NC='\e[0m'
+#izinakses
+MYIP=$(wget -qO- ipinfo.io/ip);
+echo "Sedang Mengecek Akses VPS"
+IZIN=$( curl http://jagoan86.executivevpn.world:81/akses | grep $MYIP )
+if [ $MYIP = $IZIN ]; then
+echo -e "\e[0;32mAkses Di Izinkan...\e[0m"
+else
+echo -e "\033[41;37mVPS tidak diijinkan\e[0m";
+echo "Kontak Admin Untuk Mendapatkan Akses Script"
+echo "Facebook   : Generasi Ronggolawe Tuban"
+echo "WhatsApp   : 087743253904"
+sleep 2
+exit 0
+fi
 
 # // configuration GET | RIJAL ANDRA AUTOSCRIPT
 TIMES="10"

@@ -41,6 +41,7 @@ admin Rizal Andra
 https://wa.me/+6285606508941
 ```
 
+Chat Via Whatsapp : 
 Moderator Phantom86
 ```
 https://wa.me/+6287743253904

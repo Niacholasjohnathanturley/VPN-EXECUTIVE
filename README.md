@@ -7,7 +7,7 @@ apt update && apt upgrade -y && update-grub && sleep 2 && reboot
 ```
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl unzip && wget https://github.com/Niacholasjohnathanturley/VPN-EXECUTIVE/raw/main/setupku.sh && chmod +x setupku.sh &&  ./setupku.sh
 ```
-|-------------------------|----------------|
+
 |        SERVICE          |      PORT      |
 |-------------------------|----------------|
 | XRAY Vmess TLS          |  443           |
@@ -20,7 +20,6 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.di
 | Trojan WS               |  443           |
 | Shadowsocks WS          |  443           |
 | Shadowsocks gRPC        |  443           |
-|-------------------------|----------------|
 
 ## _Server Features :_ 
 - Multi Path & Support Dynamic Path

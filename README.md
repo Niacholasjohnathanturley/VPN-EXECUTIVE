@@ -1,7 +1,7 @@
 
 # VPN-EXECUTIVE
 ```
-apt update && apt upgrade -y && update-grub && sleep 2 && reboot
+apt update && apt upgrade -y --fix-missing && update-grub && sleep 2 && reboot
 ```
 # Install AutoScript Xray Only
 ```

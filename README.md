@@ -12,7 +12,7 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.di
 |-------------------------|----------------|
 | XRAY Vmess TLS          |  443           |
 | XRAY Vmess gRPC         |  443           |
-| XRAY Vmess None TLS     |  80,8080,2082  |
+| XRAY Vmess None TLS     |  80,8080,8880  |
 | XRAY Vless TLS          |  443           |
 | XRAY Vless gRPC         |  443           |
 | XRAY Vless None TLS     |  80,8080,8880  |

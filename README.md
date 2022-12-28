@@ -37,7 +37,9 @@ wget https://github.com/Niacholasjohnathanturley/VPN-EXECUTIVE/raw/main/update &
 - Fully automatic script 
 - Full Orders For Various Services  
 - Link Account Crate Protocol
-- Format OpenClash
+- Format open clash
+- Auto Pointing Domain (free for User)
+- Five domain In Script
 
 # Daftar Ip/Trial Bisa Langsung Hubungi Admin
 Chat Via Whatsapp : 

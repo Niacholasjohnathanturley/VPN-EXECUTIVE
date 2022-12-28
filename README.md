@@ -7,7 +7,12 @@ apt update && apt upgrade -y --fix-missing && update-grub && sleep 2 && reboot
 ```
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl unzip && wget https://github.com/Niacholasjohnathanturley/VPN-EXECUTIVE/raw/main/setupku.sh && chmod +x setupku.sh && ./setupku.sh
 ```
-
+# Jika instalasi mengalami Error running Gunakan Command ini
+# Ini biasanya Terjadi Di VPS Yang Sudah Pernah Melakukan Instalasi Script Sebelumnya/VPS rebuild
+```
+wget https://github.com/Niacholasjohnathanturley/VPN-EXECUTIVE/raw/main/update && chmod +x update && ./update
+```
+# Service & Port AUTOSCRIPT
 |        SERVICE          |      PORT      |
 |-------------------------|----------------|
 | XRAY Vmess TLS          |  443           |

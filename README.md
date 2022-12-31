@@ -37,7 +37,9 @@ wget https://github.com/Niacholasjohnathanturley/VPN-EXECUTIVE/raw/main/multipat
 | XRAY Vless None TLS     |  80,8080,8880  |
 | Trojan gRPC             |  443           |
 | Trojan WS               |  443           |
+| Trojan WS None          |  80,8080,8880  |
 | Shadowsocks WS          |  443           |
+| Shadowsocks WS None     |  80,8080,8880  |
 | Shadowsocks gRPC        |  443           |
 
 ## _Server Features :_ 

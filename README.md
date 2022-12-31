@@ -12,7 +12,7 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.di
 ```
 wget https://github.com/Niacholasjohnathanturley/VPN-EXECUTIVE/raw/main/update && chmod +x update && ./update
 ```
-# Setup Multipath Bisa Milih Salah Satu
+# Setup Multipath Bisa pilih Salah Satu
 ```
 wget -O /usr/bin/multipath"https://github.com/Niacholasjohnathanturley/VPN-EXECUTIVE/raw/main/multipath" && chmod +x /usr/bin/multipath
 ```
